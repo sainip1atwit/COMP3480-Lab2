@@ -27,6 +27,12 @@ The tests are created to ensure that each service works as intended.
 
 ## How To Run Lab2.py
 
+Clone the Repo:
+
+```
+git clone 
+```
+
 Install the proper libraries:
 
 ```
