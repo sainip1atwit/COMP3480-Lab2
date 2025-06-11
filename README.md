@@ -3,84 +3,48 @@
 
 ## Lab Introduction
 
-In this lab, services are created leveraging Headers and Cookies.
+In this lab, services are created using Headers and Cookies. A second python file is created to test the services.
 
 ## Description
 
-The following project leverages fastapi and uvicorn to run http services. In the static services, you are able to see strings, an image, or a video. The dynamic routes take variables either in the route or through the query. The user can leverage the services to get a greeting with their name, calculate 2 numbers with a specified operation, or play rock paper scissors against a computer. 
+The following project leverages fastapi and uvicorn to run http services. The goal of this lab is to get familiar with Headers and Cookies. Headers use the GET request and Cookies use the POST request.. Along with the services, the file test_Lab2.py is used to test each individual service.
 
 ## Design
 
 The design has been split into 3 parts:
 
-### Part 1: Simple Routes
+### Part 1: Header Routes
 
-These routes are created to return a static message.
+These routes utilize Headers to use data.
 
-### Part 2: Query String Routes
+### Part 2: Cookies Routes
 
-These routes utilize a query string after url.
+These routes utilize Cookies to use data.
 
-### Part 3: Path Routes
+### Part 3: Testing
 
-These routes utilize path routes to get information for their respective methods.
+The tests are created to ensure that each service works as intended.
 
-## How To Run 
+## How To Run Lab2.py
 
 Install the proper libraries:
 
 ```
-pip install fastapi uvicorn
+pip install fastapi uvicorn, httpx, pytest
 ```
 
 Run the following command on your Github Repo directory:
 
 ```
-uvicorn lab1:app --port 8080 --reload
+uvicorn lab2:app --port 8080 --reload
 ```
 
-## Simple Routes
+## How to Run test_Lab2.py
 
-### Service 1: Root Route
+Assuming you have installed the proper libraries and have followed the steps above
 
-The root route service shows a string that says "original root route".
+Run the following command on your cloned Repo directory
 
-### Service 2: Image
-
-The image service shows an image of a smiley face.
-
-### Service 3: Video
-
-The video service shows a 15-second video of a man walking through the woods.
-
-### Service 4: Something
-
-The something service shows a string saying "this is something".
-
-## Query String Routes
-
-### Service 1: Name
-
-The name service shows a string that says Hello name! The name variable is received through a query.
-
-### Service 2: Calculate
-
-The calculate service grabs 2 numbers and performs an operation of the users choice. The num1, num2 and operation are received through a query.
-
-### Service 3: Rock Paper Scissors
-
-The Rock Paper Scissors (rps) service grabs a user choice of rock paper and scissors and compares it to a random computer choice. The string shows if the user wins, loses or draws with the computer in a game of rock paper scissors.
-
-## Path Routes
-
-### Service 1: Name
-
-The name service shows a string that says Hello name! The name variable is received through a path.
-
-### Service 2: Calculate
-
-The calculate service grabs 2 numbers and performs an operation of the users choice. The num1, num2 and operation are received through a path.
-
-### Service 3: Rock Paper Scissors
-
-The Rock Paper Scissors (rps) service grabs a user choice of rock paper and scissors and compares it to a random computer choice. The string shows if the user wins, loses or draws with the computer in a game of rock paper scissors.
+```
+pytest ./test_Lab2.py
+```
